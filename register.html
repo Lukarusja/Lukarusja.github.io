@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" , initial-scale=1.0>
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/JSFile.js"></script>
+
+    <title>Register - UoL project</title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            <h4>
+                <a href="index.html"><img src="assets/images/invertedlogo.png" style="width:20%; padding-left:30px"></a>
+            </h4>
+        </div>
+        <ul class="nav-links">
+            <li><a href="login.html">Log in</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </nav>
+
+
+    <section class="options-section">
+        <form onsubmit="handleSubmit(event)">
+            <p>login (must end with '.ac.uk')</p>
+            <input onchange="setEmail(this.value)" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <br><br>
+            <p>password</p>
+            <input onchange="setPassword(this.value)" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <br>
+            <br>
+            <p>What was your first pet's name?</p>
+            <input onchange="setPassword(this.value)" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <br>
+            <br>
+            <p>Security question #2</p>
+            <input onchange="setPassword(this.value)" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <br>
+            <br>
+            <p>Security question #3</p>
+            <input onchange="setPassword(this.value)" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <br>
+            <br>
+            <input type="submit" class="buttonlol" value="Register" onclick="window.location.href='success.html'" />
+        </form>
+
+    </section>
+</body>
+<script>
+    let email = "";
+    let password = "";
+
+    const setEmail = (value) => {
+        email = value
+    }
+    const setPassword = (value) => {
+        password = value
+    }
+
+    const redirect = (location) => {
+        window.location.replace(location)
+    }
+
+    const handleSubmit = (e) => {
+        e = e || window.event;
+        axios.post("account/login", {
+            "email": email,
+            "password": password
+        }).then(res => {
+            console.log(res)
+            document.cookie = `authToken=${res.data.token}; secure:true; httponly:true`
+            redirect("index.html")
+        }).catch(e => {
+            console.log(e);
+        })
+        e.preventDefault();
+    }
+</script>
+
+</html>

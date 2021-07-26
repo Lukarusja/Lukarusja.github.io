@@ -1,0 +1,300 @@
+:root {
+    --button-color: #512551;
+    --buttonhl-color: #843c84;
+    --buttonFont-color: white;
+    --button2-color: #5c2468;
+    --button2hl-color: #a349a2;
+    --dropcont-color: #a34ba3;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+    scroll-behavior: smooth;
+    color: white;
+}
+
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.692), rgba(48, 48, 48, 0.699)), url("../images/bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.logo a:hover,
+.logo a:visited,
+.logo a:link,
+.logo a:active {
+    text-decoration: none;
+    color: black;
+}
+
+nav {
+    position: fixed;
+    min-width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: black;
+    font-family: 'Roboto Mono', monospace;
+    z-index: 950;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 35%;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    padding: 12px;
+    font-size: 14px;
+}
+
+.nav-links a.active {
+    background: black;
+    color: white;
+    border-radius: 2;
+    padding: 10px;
+    transition: 0.3s ease-out;
+}
+
+.nav-links a:hover {
+    background-color: rgb(67, 4, 73);
+    color: white;
+    border-radius: 2px;
+    /* padding: 10px; */
+    transition: 0.3s ease-out;
+}
+
+.textbox {
+    position: absolute;
+    width: 90%;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#learn-more-text {
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#learn-more-header {
+    padding-top: 80px;
+    padding-bottom: 30px
+}
+
+.textbox a:hover,
+.textbox a:visited,
+.textbox a:link,
+.textbox a:active {
+    text-decoration: none;
+}
+
+.textbox h1 {
+    font-size: 65px;
+}
+
+.textbox p {
+    margin: 15px 0 40px;
+    font-size: 15px;
+    color: white;
+}
+
+.large-container {
+    height: auto;
+    text-align: center;
+}
+
+.options-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.658), rgba(0, 0, 0, 0.39)), url("../images/bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    padding-top: 5%;
+    padding-bottom: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.option {
+    width: 350px;
+    height: 575px;
+    margin: 20px;
+    box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+}
+
+.task-section {
+    padding-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    text-align: center;
+    width: 75%;
+}
+
+.task-image {
+    width: 75%;
+}
+
+.background-pic {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.658), rgba(0, 0, 0, 0.39)), url("../images/bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Dowload page dropdowns */
+
+.dropbtn {
+    bottom: 0;
+    font-size: 25px;
+    font-style: bold;
+    width: 100%;
+    color: var(--buttonFont-color);
+    background-color: var(--button-color);
+    padding: 16px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    margin: auto;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: var(--buttonhl-color);
+}
+
+.dropbtn2 {
+    font-size: 25px;
+    font-style: bold;
+    width: 100%;
+    color: var(--buttonFont-color);
+    padding: 16px;
+    border: none;
+    text-align: center;
+    top: 0;
+    background-color: var(--button2-color);
+    height: 100px;
+    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    cursor: pointer;
+}
+
+.dropbtn2:hover,
+.dropbtn2:focus {
+    background-color: var(--buttonhl-color);
+}
+
+.dropdown {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    margin: auto;
+    display: none;
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    z-index: 1;
+    color: white;
+    background-color: var(--button2hl-color);
+}
+
+.dropdown-content a {
+    color: var(--buttonFont-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    float: right;
+    width: 20%;
+    height: 100%;
+    padding: auto;
+    margin: auto;
+    font-size: 15px;
+}
+
+.dropBlurb {
+    float: left;
+    width: 65%;
+    height: 100%;
+    font-size: 15px;
+    display: inline-block;
+}
+
+.dropdown a:hover {
+    background-color: var(--buttonhl-color);
+}
+
+.show {
+    display: block;
+}
+
+.centeredBox {
+    margin: auto;
+    text-align: center;
+    width: 90%;
+}
+
+
+/*TABLES*/
+
+table {
+    margin: auto;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    text-align: left;
+    padding: 8px;
+}
+
+.buttonlol {
+    color: white;
+    background-color: rgb(67, 4, 73);
+}
+
+
+/*everything with this class is a placeholder*/
+
+.placeholder {
+    color: chartreuse
+}
